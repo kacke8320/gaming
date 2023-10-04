@@ -1,4 +1,5 @@
 #include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 #include <iostream>
 
 class Game {
@@ -18,6 +19,7 @@ class Game {
 		bool running() {return isRunning;}
 					
 	private:
+		int cnt = 0; //counter
 		bool isRunning;
 		SDL_Window *window;
 		SDL_Renderer *renderer;

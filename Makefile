@@ -1,5 +1,5 @@
 build:
-				g++ ./src/*.cpp -lSDL2 -o game
+				g++ ./src/*.cpp -lSDL2 -lSDL2_image -o game
 
 run:
 				./game

@@ -1,5 +1,9 @@
 #include "game.hpp"
 
+SDL_Texture* playerTexture;
+//SD_Rect srcR, idestR
+SDL_Rect sourceRect, destinationRect;
+
 Game::Game() {}
 Game::~Game() {}
 
@@ -32,6 +36,11 @@ void Game::init(const char *title, int xpos, int ypos, int width,
 	} else {
 		isRunning = false;
 	}
+
+	SDL_Surface* tempSurface = IMG_Load("assets/player.png");
+	playerTexture = SDL_CreateTextureFromSurface(renderer, tempSurface);
+	SDL_FreeSurface(tempSurface); //surface cleanen
+
 }
 
 void Game::handleEvents() {
@@ -46,11 +55,24 @@ void Game::handleEvents() {
 	}
 }
 
-void Game::update() {}
+void Game::update() {
+	cnt++;
+	//player.png resizen sozusagen
+	destinationRect.h = 64;
+	destinationRect.w = 64;
+	destinationRect.x = cnt/1000;
+	
+
+
+	std::cout << cnt << std::endl;
+}
 
 void Game::render() {
 	SDL_RenderClear(renderer);
 	//this is where we would add stuff to render
+						//wo player?
+	SDL_RenderCopy(renderer, playerTexture, NULL, &destinationRect);
+
 	SDL_RenderPresent(renderer);
 }
 
