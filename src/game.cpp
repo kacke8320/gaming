@@ -60,7 +60,7 @@ void Game::update() {
 	//player.png resizen sozusagen
 	destinationRect.h = 64;
 	destinationRect.w = 64;
-	destinationRect.x = cnt/1000;
+	destinationRect.x = cnt;
 	
 
 
