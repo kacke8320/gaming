@@ -1,8 +1,12 @@
-build:
-				g++ ./src/*.cpp -lSDL2 -lSDL2_image -o game
+SRC_DIR := ./src
+SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 
-run:
-				./game
+build:
+	@echo "------------------- Building -------------------"
+	g++ $(SRCS) -o main -lsfml-graphics -lsfml-window -lsfml-system -lglfw
+
+run: build
+	./main
 
 clean:
-				rm game
+	rm main main.o
