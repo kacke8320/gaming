@@ -38,8 +38,9 @@ void handleInput(sf::RenderWindow& window, sf::Sprite& playerSprite) {
 
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "gaming", sf::Style::Fullscreen);
-	//sf::RenderWindow window(sf::VideoMode(1080, 720), "gaming");
+	//für fullscreen
+	//sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "gaming", sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode(1080, 720), "gaming");
 	
 	//player texture/sprite
 	sf::Texture playerTexture;
