@@ -1,2 +1,0 @@
-# gaming
-we do gaming
